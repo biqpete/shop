@@ -36,6 +36,37 @@ class Order
      */
     private $screen;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $date;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $price;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $comment;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isSent;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="orders")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +116,78 @@ class Order
     public function setScreen(?int $screen): self
     {
         $this->screen = $screen;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(int $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getComment(): ?string
+    {
+        return $this->comment;
+    }
+
+    public function setComment(?string $comment): self
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    public function getIsSent(): ?bool
+    {
+        return $this->isSent;
+    }
+
+    public function setIsSent(bool $isSent): self
+    {
+        $this->isSent = $isSent;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

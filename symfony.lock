@@ -77,20 +77,86 @@
     "egulias/email-validator": {
         "version": "2.1.5"
     },
+    "exsyst/swagger": {
+        "version": "v0.4.1"
+    },
     "fig/link-util": {
         "version": "1.0.0"
     },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "jms/metadata": {
+        "version": "1.6.0"
+    },
+    "jms/parser-lib": {
+        "version": "1.0.0"
+    },
+    "jms/serializer": {
+        "version": "1.13.0"
+    },
+    "jms/serializer-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "fe60ce509ef04a3f40da96e3979bc8d9b13b2372"
+        }
+    },
+    "jolicode/gif-exception-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "b3348dadb52ed0390e71ae1323caff9e86bbe7f1"
+        }
+    },
+    "lcobucci/jwt": {
+        "version": "3.2.4"
+    },
+    "lexik/jwt-authentication-bundle": {
+        "version": "2.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.5",
+            "ref": "509b1542f3180a1cfe248ade8b7bf5092c2d4127"
+        }
+    },
     "monolog/monolog": {
         "version": "1.23.0"
+    },
+    "namshi/jose": {
+        "version": "7.2.3"
+    },
+    "nelmio/api-doc-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "c8e0c38e1a280ab9e37587a8fa32b251d5bc1c94"
+        }
+    },
+    "nelmio/cors-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "1fee84e00c71edee81aa54b470260779a890c9c6"
+        }
     },
     "nikic/php-parser": {
         "version": "v4.0.3"
     },
     "ocramius/proxy-manager": {
         "version": "2.1.1"
+    },
+    "phpcollection/phpcollection": {
+        "version": "0.5.0"
     },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
@@ -100,6 +166,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
+    },
+    "phpoption/phpoption": {
+        "version": "1.5.0"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -393,6 +462,6 @@
         "version": "3.2.1"
     },
     "zircote/swagger-php": {
-        "version": "3.0.0"
+        "version": "2.0.13"
     }
 }
