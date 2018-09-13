@@ -3,8 +3,10 @@
 namespace App\Controller\Api;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
+ * @Route("/api/")
  * Class PriceController
  * @package App\Controller\orders
  */
@@ -28,7 +30,7 @@ class PriceController extends Controller
         $this->price = $price;
     }
 
-    public function calculate($cpu=null,$ram=null,$drive=null,$screen=null)
+    public function calculate($cpu=null,$ram=null,$hdd=null,$screen=null)
     {
         $price = 0;
 
@@ -60,7 +62,7 @@ class PriceController extends Controller
                 break;
         }
 
-        switch($drive){
+        switch($hdd){
             case null:
                 break;
             case 128:

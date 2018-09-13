@@ -16,8 +16,6 @@ class EditOrderType extends AbstractType
     public function buildForm(FormBuilderInterface $form, array $options)
     {
         $form
-            ->add('name', HiddenType::class, array('attr' =>
-                array('class' => 'form-control')))
             ->add('orderName', TextType::class, [
                 'attr' => [
                     'class' => 'form-control'
@@ -41,7 +39,7 @@ class EditOrderType extends AbstractType
                     '32' => 32,
                 )
             ))
-            ->add('drive', ChoiceType::class, array(
+            ->add('hdd', ChoiceType::class, array(
                 'attr' => array('class' => 'form-control'),
                 'choices' => array(
                     'none' => null,
@@ -63,10 +61,10 @@ class EditOrderType extends AbstractType
                 'attr' => array('class' => 'form-control'),
                 'disabled' => 'true'
             ))
-            ->add('save', SubmitType::class, array(
-                'label' => 'Create',
-                'attr' => array('class' => 'btn btn-primary mt-3')
+            ->add('comment', TextType::class, array(
+                'attr' => array('class' => 'form-control')
             ));
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

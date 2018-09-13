@@ -10,18 +10,31 @@ namespace App\Controller\Api;
 
 use App\Entity\Order;
 use App\Entity\User;
+use App\Form\EditOrderType;
 use App\Form\NewOrderType;
 use App\Repository\OrderRepository;
+use JMS\Serializer\SerializationContext;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Swagger\Annotations as SWG;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
+/**
+ * @Route("/api/")
+ * Class OrderController
+ * @package App\Controller\Api
+ */
 class OrderController extends Controller
 {
     /**
-     * @Route("api/order/new", name="new_order")
+     * @Route("orders/new", name="new_order")
      * @SWG\Post(
      *        tags={"orders"},
      *        operationId="createOrder",
@@ -34,32 +47,28 @@ class OrderController extends Controller
      *            type="array",
      *          	@SWG\Items(
      *                type="object",
-     *              	@SWG\Property(property="name", type="string"),
-     *              	@SWG\Property(property="category", type="string"),
+     *              	@SWG\Property(property="orderName", type="string"),
      *              	@SWG\Property(property="cpu", type="string"),
      *              	@SWG\Property(property="ram", type="integer"),
      *              	@SWG\Property(property="hdd", type="integer"),
      *              	@SWG\Property(property="screen", type="integer"),
+     *              	@SWG\Property(property="comment", type="string"),
      *            ),
      *      )
      * )
      */
-    public function newOrder(Request $request, \Swift_Mailer $mailer)
+    public function newOrder(Request $request, \Swift_Mailer $mailer) // UserInterface $user
     {
-        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy([
-            'username' => 'yoman'
-        ]);
         $order = new Order();
+        $user = $this->getUser();
         $priceController = new PriceController();
 
         $form = $this->createForm(NewOrderType::class, $order);
-        $form->get('name')->setData($user->getUsername());
-        $form->handleRequest($request);
-
-        $time = new \DateTime();
-        $order->setDate($time);
+        $form->submit(json_decode($request->getContent(), true));
+        $this->get('serializer')->deserialize($request->getContent(), Order::class, 'json', ['object_to_populate' => $order]);
 
         $order->setUser($user);
+        $order->setOrderName($user->getUsername());
 
         $order->setPrice($priceController->calculate(
             $order->getCpu(),
@@ -68,14 +77,10 @@ class OrderController extends Controller
             $order->getScreen()
         ));
 
-        $order->setName("hey");
-        $order->setCpu("i5");
-        $order->setRam(32);
-        $order->setHdd(512);
-        $order->setScreen(13);
-        $request = $order;
+        if ($form->isSubmitted()) {
+            $time = new \DateTime();
+            $order->setCreatedAt($time);
 
-        if ($form->isSubmitted() && $form->isValid()) {
             $order = $form->getData();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($order);
@@ -97,101 +102,210 @@ class OrderController extends Controller
                 );
             $mailer->send($message);
 
-            $response = new JsonResponse([
-                'name' => $order->getName(),
+            return new JsonResponse([
+                'orderName' => $order->getOrderName(),
                 'cpu' => $order->getCpu(),
                 'ram' => $order->getRam(),
                 'hdd' => $order->getHdd(),
                 'screen' => $order->getScreen(),
             ]);
-
-            return $response;
         }
-
-//        return $this->render('orders/new.html.twig', array(
-//            'form' => $form->createView()
-//        ));
-
-        $response = new JsonResponse([
-            'name' => $order->getName(),
-            'cpu' => $order->getCpu(),
-            'ram' => $order->getRam(),
-            'hdd' => $order->getHdd(),
-            'screen' => $order->getScreen(),
+        return new JsonResponse([
+            'orderName' => "unknown",
+            'cpu' => "unknown",
+            'ram' => "unknown",
+            'hdd' => "unknown",
+            'screen' => "unknown"
         ]);
-
-        return $response;
     }
 
     /**
-     * @Route("/api/orders", name="index")
+     * @Route("api/orders", name="show_orders")
+     * @SWG\Get(
+     *        tags={"orders"},
+     *        operationId="showAllOrders",
+     *        summary="Show all orders"
+     * )
+     * @SWG\Response(
+     *      response="400",
+     *      description="Validation Error",
+     *      @SWG\Schema(
+     *            type="array",
+     *          	@SWG\Items(
+     *                type="object",
+     *              	@SWG\Property(property="orderName", type="string"),
+     *              	@SWG\Property(property="cpu", type="string"),
+     *              	@SWG\Property(property="ram", type="integer"),
+     *              	@SWG\Property(property="hdd", type="integer"),
+     *              	@SWG\Property(property="screen", type="integer"),
+     *              	@SWG\Property(property="comment", type="string"),
+     *            ),
+     *      )
+     * )
      */
     public function index(Request $request, OrderRepository $orderRepository)
     {
-        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy([
-            'id' => 1
-        ]);
+        $user = $this->getUser();
+        $currency = "$";
+        $totalPrice = 0;
 
         if(!empty($user))
         {
             $orders = $this->getDoctrine()->getRepository(Order::class)->findBy([
                 'user' => $user
             ]);
+            foreach ($orders as $order) {
+                $totalPrice += $order->getPrice();
+            }
         } else {
             $orders = null;
         }
-        $locale = $this->getUser()->getLocale();
 
-        $currency = "$";
-        $totalPrice = 0;
-        foreach ($orders as $order) {
-            $totalPrice += $order->getPrice();
-            if ($locale == "pl_PL" || $locale == "pl") {
-                //$order->setPrice($this->convertCurrency($order->getPrice(), 'USD', 'PLN')); // ZA DUŻO REQUESTÓW FREE
-                $order->setPrice($order->getPrice() * 3.8);
-            }
-        }
-
-        if ($locale == "pl_PL" || $locale == "pl") {
-            $totalPrice *= 3.8;
-            //$totalPrice = $this->convertCurrency($totalPrice, 'USD', 'PLN');
-            $currency = "PLN";
-        }
-
-        $_user = $this->getDoctrine()->getRepository(User::class)->find($this->getUser());
-
-//        try {
-//            $userId = $_user->getUser()->getId();
-//        } catch (NotNullConstraintViolationException $e){
-//            $e->getMessage();
-//        }
-
-        $userId = $_user->getId();
-
+        $userId = $user->getId();
         $qb = $orderRepository->createQueryBuilder('o')
             ->setParameter('q', '' . $userId . '')
             ->andWhere('o.user = :q');
-
         $query = $qb->getQuery(); //    ->getResult();
 
         $paginator = $this->get('knp_paginator');
-        $orders = $paginator->paginate(
+        $_orders = $paginator->paginate(
             $query, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
             10/*limit per page*/
         );
 
+        $orders = [];
+        foreach ($_orders as $order) {
+            $orders[] = $order;
+        }
+
+        $context = new SerializationContext();
+        $context
+            ->setSerializeNull(true)
+            ->setGroups(['api']);
+
         return new JsonResponse([
-                'user' => $user,
-                'orders' => $orders,
+                'user' => $user->getUsername(),
+                'orders' => json_decode($this->get('jms_serializer')->serialize($orders,'json', $context)),
                 'totalPrice' => $totalPrice,
                 'currency' => $currency
         ]);
-//        return $this->render("orders/index.html.twig", array(
-//            'user' => $user,
-//            'orders' => $orders,
-//            'totalPrice' => $totalPrice,
-//            'currency' => $currency
-//        ));
+    }
+
+    /**
+     * @Route("orders/edit/{id}", name="edit_order")
+     * @SWG\Put(
+     *        tags={"orders"},
+     *        operationId="editOrder",
+     *        summary="Edit order"
+     * )
+     * @SWG\Response(
+     *      response="400",
+     *      description="Validation Error",
+     *      @SWG\Schema(
+     *            type="array",
+     *          	@SWG\Items(
+     *                type="object",
+     *              	@SWG\Property(property="orderName", type="string"),
+     *              	@SWG\Property(property="cpu", type="string"),
+     *              	@SWG\Property(property="ram", type="integer"),
+     *              	@SWG\Property(property="hdd", type="integer"),
+     *              	@SWG\Property(property="screen", type="integer"),
+     *              	@SWG\Property(property="comment", type="string"),
+     *            ),
+     *      )
+     * )
+     */
+    public function edit(Request $request, $id)
+    {
+        $user = $this->getUser();
+        $priceController = new PriceController();
+        $order = $this->getDoctrine()->getRepository(Order::class)->find($id);
+
+        if ($order)
+        {
+            $form = $this->createForm(EditOrderType::class, $order);
+
+            $context = new SerializationContext();
+            $context
+                ->setSerializeNull(true)
+                ->setGroups(['api']);       // $jsonOrder = json_decode($this->get('jms_serializer')->serialize($order,'json', $context));
+
+            $this->get('serializer')->deserialize($request->getContent(), Order::class, 'json', ['object_to_populate' => $order]);
+
+            $formData = $form->setData($order);
+            $form->submit($formData);
+
+            $order->setPrice($priceController->calculate(
+                $order->getCpu(),
+                $order->getRam(),
+                $order->getHdd(),
+                $order->getScreen()
+            ));
+
+            if ($form->isSubmitted()) {
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($order);
+                $entityManager->flush();
+
+                $context = new SerializationContext();
+                $context
+                    ->setSerializeNull(true)
+                    ->setGroups(['api']);
+
+                return new JsonResponse([
+                    'status' => 'ok',
+                    'order' => json_decode($this->get('jms_serializer')->serialize($order,'json', $context)),
+                ]);
+            }
+        }
+        return new JsonResponse(['status' => 'nok']);
+    }
+
+    /**
+     * @Route("orders/{id}", name="show_order")
+     * @SWG\Get(
+     *        tags={"orders"},
+     *        operationId="showOrder",
+     *        summary="Show order"
+     * )
+     * @SWG\Response(
+     *      response="400",
+     *      description="Validation Error",
+     *      @SWG\Schema(
+     *            type="array",
+     *          	@SWG\Items(
+     *                type="object",
+     *              	@SWG\Property(property="orderName", type="string"),
+     *              	@SWG\Property(property="cpu", type="string"),
+     *              	@SWG\Property(property="ram", type="integer"),
+     *              	@SWG\Property(property="hdd", type="integer"),
+     *              	@SWG\Property(property="screen", type="integer"),
+     *              	@SWG\Property(property="comment", type="string"),
+     *            ),
+     *      )
+     * )
+     */
+    public function show($id)
+    {
+        $user = $this->getUser();
+
+        $order = $this->getDoctrine()->getRepository(Order::class)->findOneBy([
+            'id' => $id,
+            'orderName' => $user->getUsername()
+        ]);
+        $currency = "$";
+        $orderPrice = $order->getPrice();
+
+        $context = new SerializationContext();
+        $context
+            ->setSerializeNull(true)
+            ->setGroups(['api']);
+
+        return new JsonResponse([
+            'order' => json_decode($this->get('jms_serializer')->serialize($order,'json', $context)),
+            'orderPrice' => $orderPrice,
+            'currency' => $currency
+        ]);
     }
 }

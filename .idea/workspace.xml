@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee28132-0470-4c79-aa9e-52443c1f2368" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Api/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Api/OrderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Api/PriceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Api/RegisterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/EditOrderType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/NewOrderType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RegisterType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.dist" beforeDir="false" afterPath="$PROJECT_DIR$/.env.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Api/ApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Shop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -18,10 +10,16 @@
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/annotations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/PriceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/PriceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EditOrderType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EditOrderType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/NewOrderType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/NewOrderType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,96 +28,170 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="86666369">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="env" value="4" />
-          <entry key="gitignore" value="2" />
+          <entry key="env" value="6" />
+          <entry key="gitignore" value="3" />
           <entry key="js" value="1" />
-          <entry key="json" value="6" />
+          <entry key="json" value="9" />
           <entry key="lock" value="6" />
           <entry key="map" value="1" />
-          <entry key="php" value="27" />
-          <entry key="yaml" value="19" />
+          <entry key="pem" value="4" />
+          <entry key="php" value="84" />
+          <entry key="yaml" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="JSON" value="9" />
+          <entry key="JSON" value="12" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="27" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="PHP" value="84" />
+          <entry key="PLAIN_TEXT" value="16" />
           <entry key="SourceMap" value="1" />
-          <entry key="YAML" value="19" />
+          <entry key="YAML" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="43" />
-          <entry key="env" value="34" />
-          <entry key="php" value="2120" />
-          <entry key="yaml" value="20" />
+          <entry key="dummy" value="73" />
+          <entry key="env" value="41" />
+          <entry key="php" value="9573" />
+          <entry key="yaml" value="351" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="2120" />
-          <entry key="PLAIN_TEXT" value="77" />
-          <entry key="YAML" value="20" />
+          <entry key="PHP" value="9573" />
+          <entry key="PLAIN_TEXT" value="114" />
+          <entry key="YAML" value="351" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="9" />
+          <entry key="PHP Class.type" value="14" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Api/RegisterController.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Api/PriceController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="69" column="58" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="58" />
+            <state relative-caret-position="500">
+              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
               <folding>
-                <element signature="e#121#141#0#PHP" expanded="true" />
-                <element signature="e#2447#2454#1#PHP" expanded="true" />
-                <element signature="e#2510#2539#0#PHP" expanded="true" />
+                <element signature="e#38#95#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Api/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            <state relative-caret-position="348">
+              <caret line="188" column="28" selection-start-line="188" selection-end-line="189" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Api/LoginController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-720">
+              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+              <folding>
+                <element signature="e#121#141#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Order.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3800">
+              <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+              <folding>
+                <element signature="e#30#62#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/EditOrderType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1956">
+              <caret line="172" column="9" selection-start-line="172" selection-start-column="9" selection-end-line="172" selection-end-column="9" />
+              <folding>
+                <element signature="e#30#78#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Api/UserSettingsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="574">
+              <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+              <folding>
+                <element signature="e#6#87#0#PHP" expanded="true" />
+                <element signature="e#121#141#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/EditUserType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+        <entry file="file://$PROJECT_DIR$/config/bundles.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
-              <folding>
-                <element signature="e#30#78#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="500">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/packages/vich_uploader.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -132,6 +204,30 @@
       <find>ScriptHandler</find>
       <find>swagger</find>
       <find>path</find>
+      <find>background</find>
+      <find>bg</find>
+      <find>password</find>
+      <find>Serializer</find>
+      <find>json_deco</find>
+      <find>setRol</find>
+      <find>getId</find>
+      <find>role</find>
+      <find>username</find>
+      <find>getRole</find>
+      <find>name</find>
+      <find>user</find>
+      <find>created</find>
+      <find>date</find>
+      <find>getOrder</find>
+      <find>order</find>
+      <find>screen</find>
+      <find>drive</find>
+      <find>city</find>
+      <find>null</find>
+      <find>imageName</find>
+      <find>image</find>
+      <find>imageFile</find>
+      <find>email</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/config/packages/test</dir>
@@ -148,28 +244,42 @@
         <option value="$PROJECT_DIR$/src/Forms/editOrder.php" />
         <option value="$PROJECT_DIR$/src/Controller/orders/PriceController.php" />
         <option value="$PROJECT_DIR$/src/Form/NewOrder.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/config/packages/hb_swagger_ui.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/orders/ShowAllOrders.php" />
         <option value="$PROJECT_DIR$/src/Controller/orders/AllOrders.php" />
         <option value="$PROJECT_DIR$/config/bundles.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/Form/NewOrderType.php" />
         <option value="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" />
         <option value="$PROJECT_DIR$/vendor/autoload.php" />
         <option value="$PROJECT_DIR$/src/Controller/orders/NewOrder.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Api/LoginController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Api/PriceController.php" />
-        <option value="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" />
         <option value="$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml" />
         <option value="$PROJECT_DIR$/src/Form/RegisterType.php" />
-        <option value="$PROJECT_DIR$/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
-        <option value="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" />
-        <option value="$PROJECT_DIR$/src/Controller/Api/OrderController.php" />
         <option value="$PROJECT_DIR$/src/Migrations/Version20180905104608.php" />
+        <option value="$USER_HOME$/Desktop/travel-buddy-front/waiting.php" />
+        <option value="$USER_HOME$/Desktop/travel-buddy-front-1/index.php" />
+        <option value="$PROJECT_DIR$/config/routes/annotations.yaml" />
+        <option value="$PROJECT_DIR$/src/Form/LoginForm.php" />
+        <option value="$PROJECT_DIR$/src/Form/LoginType.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Api/TokenControllerTest.php" />
+        <option value="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" />
+        <option value="$USER_HOME$/Downloads/security.yaml" />
+        <option value="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/Controller/Api/ApiController.php" />
+        <option value="$PROJECT_DIR$/config/packages/security.yaml" />
+        <option value="$PROJECT_DIR$/src/Form/NewOrderType.php" />
+        <option value="$PROJECT_DIR$/src/Form/EditOrderType.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Api/LoginController.php" />
         <option value="$PROJECT_DIR$/src/Controller/Api/RegisterController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Api/PriceController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Api/LocaleController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Order.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Api/OrderController.php" />
+        <option value="$PROJECT_DIR$/config/packages/vich_uploader.yaml" />
+        <option value="$PROJECT_DIR$/src/Form/EditUserType.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Api/UserSettingsController.php" />
       </list>
     </option>
   </component>
@@ -178,6 +288,587 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/node_modules/@braintree/sanitize-url/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/@kyleshockey/js-yaml/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/@kyleshockey/object-assign-deep/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/@types/react/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/accepts/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-html/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/anymatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/argparse/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/arr-diff/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/arr-flatten/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/arr-union/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/array-find-index/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/array-flatten/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/array-includes/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/array-union/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/array-uniq/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/array-unique/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/asap/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/assign-symbols/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/async-each/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/async/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/atob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/autolinker/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/babel-runtime/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base64-js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/batch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/binary-extensions/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/body-parser/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/body-parser/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/body-parser/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/body-parser/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/bonjour/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/braces/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/braces/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/btoa/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/buffer-indexof/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/builtin-modules/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/bytes/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cache-base/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/camelcase-keys/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/chokidar/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/class-utils/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/class-utils/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/classnames/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cliui/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/code-point-at/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/collection-visit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/combined-stream/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/component-emitter/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/compressible/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/compression/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/compression/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/connect-history-api-fallback/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/content-disposition/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/content-type/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cookie-signature/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cookie/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/copy-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/core-js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/create-react-class/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cross-fetch/node_modules/whatwg-fetch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cross-fetch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cross-fetch/polyfill/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/css.escape/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/csstype/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/currently-unhandled/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/decamelize/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/decode-uri-component/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/deep-equal/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/deep-extend/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-properties/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/del/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/delayed-stream/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/destroy/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/detect-node/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/dns-equal/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/dns-packet/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/dns-txt/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/dompurify/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ee-first/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/encode-3986/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/encodeurl/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/encoding/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/errno/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/error-ex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/es-abstract/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/es-to-primitive/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/es5-ext/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/es6-iterator/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/es6-symbol/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/es6-weak-map/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/escape-html/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/etag/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/event-emitter/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/eventemitter3/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/eventsource/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-range/node_modules/fill-range/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-range/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-range/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-range/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-range/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/express/node_modules/array-flatten/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/express/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/express/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/express/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/express/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extend-shallow/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fast-json-patch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/faye-websocket/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fbjs/node_modules/core-js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fbjs/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/filename-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fill-range/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fill-range/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/finalhandler/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/finalhandler/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/find-up/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/follow-redirects/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/for-in/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/for-own/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/form-data/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/forwarded/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fragment-cache/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fresh/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fs.realpath/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/aproba/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/are-we-there-yet/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/code-point-at/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/console-control-strings/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/deep-extend/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/delegates/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/detect-libc/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/fs-minipass/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/fs.realpath/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/gauge/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/has-unicode/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/ignore-walk/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/inflight/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/minipass/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/minizlib/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/needle/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/node-pre-gyp/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/nopt/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/npm-bundled/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/npm-packlist/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/npmlog/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/number-is-nan/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/once/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/os-homedir/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/os-tmpdir/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/osenv/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/rc/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/rc/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/rimraf/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/sax/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/set-blocking/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/strip-json-comments/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/tar/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/util-deprecate/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/wide-align/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/wrappy/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/node_modules/yallist/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fsevents/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/function-bind/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-caller-file/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-stdin/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/glob-base/node_modules/glob-parent/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/glob-base/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/glob-base/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/glob-base/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/glob-parent/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/glob-parent/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/globby/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/globby/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/handle-thing/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-flag/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-values/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/hoist-non-react-statics/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/hosted-git-info/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/hpack.js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/html-entities/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-deceiver/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-parser-js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/arr-diff/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/array-unique/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/braces/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/expand-brackets/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/extglob/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/micromatch/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/micromatch/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/node_modules/micromatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy-middleware/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/http-proxy/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ieee754/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/immutable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/import-local/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/indent-string/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/inflight/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/internal-ip/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/invariant/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/invert-kv/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ip/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ipaddr.js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-accessor-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-arrayish/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-binary-path/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-builtin-module/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-callable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-data-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-date-object/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-dom/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-dotfile/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-equal-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-finite/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-number/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-path-cwd/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-path-in-cwd/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-path-inside/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-plain-object/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-posix-bracket/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-primitive/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-promise/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-stream/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-symbol/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-utf8/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-windows/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-wsl/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isomorphic-fetch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isomorphic-form-data/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/js-file-download/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/js-tokens/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/json3/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/killable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lcid/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/load-json-file/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/load-json-file/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/locate-path/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lodash-es/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lodash.debounce/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lodash/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/loglevel/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/loose-envify/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/loud-rejection/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lru-queue/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/map-cache/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/map-obj/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/map-visit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/math-random/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/media-typer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/memoizee/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/memory-fs/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/meow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/merge-descriptors/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/methods/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/micromatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mime-db/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mime-types/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/minimalistic-assert/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mixin-deep/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mixin-deep/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mkdirp/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/multicast-dns-service-types/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/multicast-dns/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nan/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nan/tools/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nanomatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/negotiator/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/next-tick/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/node-fetch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/node-forge/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/normalize-package-data/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/normalize-path/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/number-is-nan/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-copy/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-copy/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-copy/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-keys/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-visit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object.omit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object.pick/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/obuf/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/on-finished/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/on-headers/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/once/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/opn/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/original/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/os-locale/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/p-limit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/p-locate/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/p-map/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/p-try/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/parse-glob/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/parse-glob/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/parse-glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/parse-json/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/parseurl/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/pascalcase/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/path-dirname/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/path-exists/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/path-is-inside/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/path-to-regexp/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/path-type/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/path-type/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/performance-now/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/pinkie-promise/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/pinkie/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/pkg-dir/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/portfinder/node_modules/async/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/portfinder/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/portfinder/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/posix-character-classes/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/preserve/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/promise/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/prop-types/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/proxy-addr/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/prr/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/querystring-browser/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/querystring/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/querystringify/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/raf/node_modules/performance-now/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/raf/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/randomatic/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/randomatic/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/range-parser/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/raw-body/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/raw-body/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/raw-body/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/raw-body/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/raw-body/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-addons-perf/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-debounce-input/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-dom/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-immutable-proptypes/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-immutable-pure-component/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-inspector/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-motion/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-redux/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/read-pkg-up/node_modules/find-up/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/read-pkg-up/node_modules/path-exists/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/read-pkg-up/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/read-pkg/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/readdirp/examples/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/readdirp/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/redent/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/redux-immutable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/redux/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/regenerator-runtime/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/regex-cache/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/regex-not/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/remarkable/node_modules/argparse/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/remarkable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/remove-trailing-separator/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/repeat-element/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/repeat-string/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/repeating/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/require-directory/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/require-main-filename/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/requires-port/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/reselect/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/resolve-cwd/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/resolve-from/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/resolve-url/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ret/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/rimraf/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/safe-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/select-hose/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/selfsigned/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/send/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/send/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/serialize-error/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/serve-index/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/serve-index/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/serve-static/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/set-blocking/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/set-immediate-shim/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/set-value/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/setimmediate/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-util/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-util/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sockjs-client/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sockjs-client/node_modules/faye-websocket/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sockjs-client/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sockjs/examples/echo/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sockjs/examples/express-3.x/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sockjs/examples/express/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sockjs/examples/hapi/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sockjs/examples/koa/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sockjs/examples/multiplex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sockjs/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/source-map-resolve/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/source-map-url/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/spdx-correct/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/spdx-exceptions/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/spdx-expression-parse/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/spdx-license-ids/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/spdy-transport/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/spdy-transport/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/spdy/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/spdy/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/split-string/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/sprintf-js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/static-extend/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/static-extend/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/strip-bom/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/strip-indent/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/swagger-client/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/symbol-observable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/thunky/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/time-stamp/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/timers-ext/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-object-path/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-object-path/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex-range/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/trim-newlines/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/type-is/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ua-parser-js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/underscore.string/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/underscore/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/union-value/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/union-value/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/union-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unpipe/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/node_modules/has-value/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/upath/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/urix/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/url-parse/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/url/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/use/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/utf8-bytes/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/utfstring/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/util-deprecate/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/utils-merge/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/uuid/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/validate-npm-package-license/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/vary/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wbuf/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/webpack-dev-middleware/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/webpack-dev-middleware/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/webpack-dev-server/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/websocket-driver/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/websocket-extensions/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/whatwg-fetch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/which-module/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wrap-ansi/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wrappy/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/xml-but-prettier/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/xml/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/y18n/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/yargs-parser/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/yargs-parser/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/yargs/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/yargs/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/zenscroll/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -288,12 +979,18 @@
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/lexik/jwt-authentication-bundle" />
       <path value="$PROJECT_DIR$/vendor/jolicode/gif-exception-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/templating" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/vendor/fresh/vich-uploader-serialization-bundle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="813" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -311,12 +1008,13 @@
             <path>
               <item name="Shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shop" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shop" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="jwt" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Shop" type="b2602c69:ProjectViewProjectNode" />
@@ -327,8 +1025,13 @@
             <path>
               <item name="Shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shop" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shop" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Shop" type="b2602c69:ProjectViewProjectNode" />
@@ -360,17 +1063,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Form" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shop" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -383,6 +1075,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -403,6 +1096,16 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="LoginController.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Shop/Controller/Api/LoginController.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.LoginController.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -413,36 +1116,61 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1536138321553</updated>
-      <workItem from="1536138323107" duration="22787000" />
+      <workItem from="1536138323107" duration="23244000" />
+      <workItem from="1536270754519" duration="4067000" />
+      <workItem from="1536313120442" duration="51882000" />
+      <workItem from="1536822849447" duration="10027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22787000" />
+    <option name="totallyTimeSpent" value="89220000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="813" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24964234" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2074392" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.3295129" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39971346" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="8" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.3295129" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2074392" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.3295129" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39971346" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="8" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.3295129" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -451,108 +1179,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/swagger/swagger.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/EditOrderType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1876">
-          <caret line="181" selection-start-line="181" selection-end-line="181" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/swagger-api/swagger-ui/dist/swagger-ui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20121">
-          <caret line="1" column="3248" lean-forward="true" selection-start-line="1" selection-start-column="3248" selection-end-line="1" selection-end-column="3248" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/swagger-api/swagger-ui/dist/swagger-ui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-811" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/swagger-api/swagger-ui/dist/swagger-ui.js.map">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret column="12021" selection-start-column="12021" selection-end-column="12021" />
-        </state>
-      </provider>
-      <provider editor-type-id="sourcemapFileViewerProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/hb_swagger_ui.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/jms_serializer.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/bundles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/NewOrderType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-          <folding>
-            <element signature="e#110#131#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/nelmio_cors.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="9" column="53" lean-forward="true" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -567,27 +1193,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes/annotations.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -595,67 +1200,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/orders/AllOrders.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#124#145#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/orders/NewOrder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" selection-start-line="4" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="e#41#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Api/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Api/PriceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/RegisterType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
-          <folding>
-            <element signature="e#110#130#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/orders/AllOrders.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/orders/NewOrder.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180905090930.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -688,39 +1234,139 @@
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180905104224.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml">
+    <entry file="file://$USER_HOME$/Desktop/travel-buddy-front/waiting.php" />
+    <entry file="file://$USER_HOME$/Desktop/travel-buddy-front/index.php" />
+    <entry file="file://$USER_HOME$/Desktop/travel-buddy-frontA/index.php" />
+    <entry file="file://$USER_HOME$/Desktop/travel-buddy-front-1/index.php" />
+    <entry file="file://$PROJECT_DIR$/config/packages/nelmio_cors.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="340">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Api/OrderController.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/Api/TokenControllerTest.php" />
+    <entry file="file://$PROJECT_DIR$/config/routes/annotations.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        <state relative-caret-position="40">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/form/AbstractType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/form/FormTypeInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/form/FormInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1763">
+          <caret line="184" column="32" selection-start-line="184" selection-start-column="32" selection-end-line="184" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/jwt/public.pem">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/jwt/private.pem">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/security.yaml" />
+    <entry file="file://$PROJECT_DIR$/src/Form/RegisterType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
-            <element signature="e#120#141#0#PHP" expanded="true" />
+            <element signature="e#110#130#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Api/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+          <folding>
+            <element signature="e#121#151#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/jms_serializer.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/serializer/Serializer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/routing.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Api/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="69" column="58" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="58" />
-          <folding>
-            <element signature="e#121#141#0#PHP" expanded="true" />
-            <element signature="e#2447#2454#1#PHP" expanded="true" />
-            <element signature="e#2510#2539#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="920">
+          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -731,13 +1377,113 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/LoginType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Api/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <element signature="e#38#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Api/PriceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding>
+            <element signature="e#38#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/NewOrderType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1132">
+          <caret line="70" column="42" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Api/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-720">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <element signature="e#121#141#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/EditOrderType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3800">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Api/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="188" column="28" selection-start-line="188" selection-end-line="189" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+        <state relative-caret-position="1956">
+          <caret line="172" column="9" selection-start-line="172" selection-start-column="9" selection-end-line="172" selection-end-column="9" />
           <folding>
             <element signature="e#30#78#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Api/UserSettingsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#121#141#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/vich_uploader.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/EditUserType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/bundles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>

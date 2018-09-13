@@ -22,10 +22,10 @@ class NewOrderType extends AbstractType
     public function buildForm(FormBuilderInterface $form, array $options)
     {
         $form
-            ->add('name', HiddenType::class, array(
+            ->add('orderName', TextType::class, array(
                 'attr' => [
                     'class' => 'form-control',
-                ],
+                ]
             ))
             ->add('cpu', ChoiceType::class, array(
                 'attr' => array('class' => 'form-control'),
@@ -67,13 +67,12 @@ class NewOrderType extends AbstractType
                 'attr' => array('class' => 'form-control'),
                 'disabled' => 'true'
             ))
-            ->add('date', HiddenType::class, [
+            ->add('comment', TextType::class, array(
+                'attr' => array('class' => 'form-control')
+            ))
+            ->add('createdAt', HiddenType::class, [
                 'attr' => ['class' => 'form-control']
-            ])
-            ->add('save', SubmitType::class, array(
-                'label' => 'Create',
-                'attr' => array('class' => 'btn btn-primary mt-3')
-            ));
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
